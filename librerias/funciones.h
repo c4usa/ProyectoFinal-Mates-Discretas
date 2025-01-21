@@ -10,13 +10,13 @@
 
 void mostrarCarátula()
 {
-    printf("*********************************************************************************************************\n");
-    printf("\t\t\t\tMATEMÁTICAS DISCRETAS 1\t\t\t\t\n");
+    printf(BLUE"*********************************************************************************************************\n");
+    printf(BLUE"\t\t\t\tMATEMÁTICAS DISCRETAS 1\t\t\t\t\n");
     printf("\n");
-    printf("\tIntegrantes: Diego Molina, Tomás González\n");
-    printf("\tEste programa genera una expresión SOP a partir de una tabla de verdad ingresada por el usuario\n");
-    printf("\tAño Electivo: 2024-2025\n");
-    printf("********************************************************************************************************\n\n");
+    printf(BLUE"\tIntegrantes: Diego Molina, Tomás González\n");
+    printf(BLUE"\tEste programa genera una expresión SOP a partir de una tabla de verdad ingresada por el usuario\n");
+    printf(BLUE"\tAño Electivo: 2024-2025\n");
+    printf(BLUE"********************************************************************************************************\n\n");
 }
 
 int ingresarNumeroVariables()
@@ -24,7 +24,7 @@ int ingresarNumeroVariables()
     int variables;
     do
     {
-        printf("Digite el número de variables lógicas (2 o 3): ");
+        printf(BLUE"Digite el número de variables lógicas (2 o 3): ");
         scanf("%d", &variables);
         if (variables != 2 && variables != 3)
         {
@@ -36,7 +36,7 @@ int ingresarNumeroVariables()
 
 void ingresarValores(int variables, int filas, int salida[])
 {
-    printf("\nIngrese los valores de salida, 0 o 1 para cada fila en la tabla de verdad:\n");
+    printf(BLUE"\nIngrese los valores de salida, 0 o 1 para cada fila en la tabla de verdad:\n");
     for (int i = 0; i < filas; i++)
     {
         printf("Fila %d: ", i + 1);
@@ -92,16 +92,16 @@ int calcularOperacion(int a, int b, char operador)
 
 void generarTablaDeVerdad(int variables, int filas, int salida[], const char expresion[])
 {
-    printf("Tabla de verdad de la expresión %s\n", expresion);
+    printf(BLUE"Tabla de verdad de la expresión %s\n", expresion);
     printf("\t");
     for (int i = 0; i < variables; i++)
     {
         printf("%-8c", 'A' + i);
     }
     if (variables == 3)
-        printf("%-10s", "Operación");
-    printf("%-10s\n", "\tResultado");
-    printf("\t-----------------------------------------------------\n");
+        printf("%-10s",BLUE"Operación");
+    printf("%-10s\n", RED"\tResultado");
+    printf(BLUE"\t-----------------------------------------------------\n");
     for (int i = 0; i < filas; i++)
     {
         printf("\t");
