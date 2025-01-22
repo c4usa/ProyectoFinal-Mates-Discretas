@@ -1,7 +1,5 @@
 #include <stdio.h>
 #include ".\librerias\funciones.h"
-#include <stdio.h>
-
 int main (int argc, char *argv[]) 
 {
     mostrarCaratula();
